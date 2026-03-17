@@ -14,5 +14,5 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY config ./config
 
-EXPOSE 3001
+EXPOSE 3000
 CMD ["node", "dist/main.js"]
