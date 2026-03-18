@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProgressModule } from './progress/progress.module';
 import { IntroConfigModule } from './config/config.module';
 import { XarxaModule } from './xarxa/xarxa.module';
+import { HealthController } from './health/health.controller';
 
 @Module({
   imports: [
@@ -25,5 +26,6 @@ import { XarxaModule } from './xarxa/xarxa.module';
     IntroConfigModule,
     XarxaModule,
   ],
+  controllers: [HealthController],
 })
 export class AppModule {}
