@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "nest build",
+    "build:pro": "nest build --configuration production",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/main.js"
