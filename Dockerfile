@@ -6,7 +6,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile && pnpm approve-builds
 
 COPY . .
 RUN pnpm build:pro
@@ -21,7 +21,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile --prod && pnpm approve-builds
 
 COPY --from=builder /app/dist ./dist
 
